@@ -19,6 +19,19 @@ const createData = function (req, res) {
     });
   };
   
+const getAllUser = function (req, res) {
+    crudModel.getAllUser(function (data) {
+      res.json({ "data": data });
+    });
+};
+  
+const getOneUserById = function (req, res) {
+  let id = req.params.id;
+    crudModel.getOneUserById({Id:id},function (data) {
+      res.json({ "data": data });
+    });
+};
+  
 
 
 
@@ -26,4 +39,6 @@ const createData = function (req, res) {
 module.exports = {
     // userForm,
     createData,
+    getAllUser,
+    getOneUserById
 }

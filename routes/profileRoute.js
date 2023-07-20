@@ -11,4 +11,7 @@ router.post('/register', upload.fields([
     { name: 'PoliticalPartylogo', maxCount: 4 }
   ]),userController.createData);
 
+router.get('/getAllRegisterUser',userController.getAllUser)
+router.get('/getOneUserById/:id',userController.getOneUserById)
+
 module.exports = router;
